@@ -38,8 +38,28 @@ public class Grid {
     }
 
 
+    public void paintCell(int col, int row){
+        cells[col][row].paintCell();
+    }
+
+    public int pixelToCell(double x){
+        System.out.println(x);
+        System.out.println((x - Padding)/ cellSize);
+
+        return (int) ((x - Padding )/ cellSize);
+    }
 
 
+    //Getters and Setters
+    public int getMaxCol() {
+        return maxCol;
+    }
 
+    public int getMaxRow() {
+        return maxRow;
+    }
 
+    public int getCellSize() {
+        return cellSize;
+    }
 }

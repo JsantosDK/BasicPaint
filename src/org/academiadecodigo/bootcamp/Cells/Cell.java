@@ -28,7 +28,11 @@ public class Cell {
         cell.draw();
     }
 
+    public void paintCell(){
+        cell.fill();
+    }
 
+    public void drawCell(){}
 
 
 }

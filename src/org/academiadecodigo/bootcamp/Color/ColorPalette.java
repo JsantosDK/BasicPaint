@@ -14,9 +14,9 @@ public class ColorPalette {
 
     //Constructor
 
-    public ColorPalette(int maxCol) {
-        cellSize = 25;
-        col = maxCol * cellSize + cellSize * 2;
+    public ColorPalette(int maxCol, int cellSize) {
+        this.cellSize = 25;
+        col = maxCol * cellSize + this.cellSize * 2;
         row = Grid.Padding;
         drawPalette();
     }
