@@ -1,7 +1,9 @@
 package org.academiadecodigo.bootcamp.Color;
 
 import org.academiadecodigo.bootcamp.Grid;
+import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Ellipse;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class ColorPalette {
 
@@ -12,20 +14,19 @@ public class ColorPalette {
 
     //Constructor
 
-    public ColorPalette(int maxCol, int cellSize) {
+    public ColorPalette(int maxCol) {
+        cellSize = 25;
         col = maxCol * cellSize + cellSize * 2;
         row = Grid.Padding;
-        this.cellSize = cellSize;
         drawPalette();
     }
 
 
     //Methods
     private void drawPalette(){
-        System.out.println(ColorList.values().length);
         for (int i = 0; i < ColorList.values().length; i++){
             Ellipse paletteColor = new Ellipse(col, row, cellSize, cellSize);
-            paletteColor.setColor(ColorList.values()[i].colorSelector(ColorList.values()[i]));
+            paletteColor.setColor(colorSelector(ColorList.values()[i]));
             paletteColor.fill();
             if (i == ColorList.values().length/2 - 1){
                 row = Grid.Padding;
@@ -33,6 +34,39 @@ public class ColorPalette {
             } else {
                 row += cellSize;
             }
+        }
+        Rectangle contour = new Rectangle(col - cellSize, Grid.Padding, cellSize * 2, cellSize * 6);
+        contour.draw();
+    }
+
+    private Color colorSelector(ColorList colorList){
+        switch (colorList){
+            case RED:
+                return Color.RED;
+            case GREEN:
+                return Color.GREEN;
+            case BLUE:
+                return Color.BLUE;
+            case LIGHT_GRAY:
+                return Color.LIGHT_GRAY;
+            case GRAY:
+                return Color.GRAY;
+            case DARK_GRAY:
+                return Color.DARK_GRAY;
+            case BLACK:
+                return Color.BLACK;
+            case CYAN:
+                return Color.CYAN;
+            case MAGENTA:
+                return Color.MAGENTA;
+            case YELLOW:
+                return Color.YELLOW;
+            case PINK:
+                return Color.PINK;
+            case ORANGE:
+                return Color.ORANGE;
+                default:
+                    return Color.WHITE;
         }
     }
 
