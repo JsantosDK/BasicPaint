@@ -12,6 +12,7 @@ public enum ColorList {
     MAGENTA,
     YELLOW,
     PINK,
-    ORANGE;
+    ORANGE,
+    WHITE;
 
 }

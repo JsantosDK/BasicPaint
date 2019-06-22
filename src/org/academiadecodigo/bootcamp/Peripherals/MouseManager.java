@@ -1,5 +1,6 @@
-package org.academiadecodigo.bootcamp;
+package org.academiadecodigo.bootcamp.Peripherals;
 
+import org.academiadecodigo.bootcamp.PaintManager;
 import org.academiadecodigo.simplegraphics.mouse.Mouse;
 import org.academiadecodigo.simplegraphics.mouse.MouseEvent;
 import org.academiadecodigo.simplegraphics.mouse.MouseEventType;
@@ -21,7 +22,7 @@ public class MouseManager implements MouseHandler {
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
         //Necessary compensations since the Library is not properly aligned.
-        paintManager.mouseClick(mouseEvent.getX()-1, mouseEvent.getY()-32);
+        paintManager.mouseClick(mouseEvent.getX(), mouseEvent.getY()-25);
     }
 
     @Override

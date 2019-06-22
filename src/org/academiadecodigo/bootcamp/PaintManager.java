@@ -1,6 +1,8 @@
 package org.academiadecodigo.bootcamp;
 
 import org.academiadecodigo.bootcamp.Color.ColorPalette;
+import org.academiadecodigo.bootcamp.Peripherals.MouseManager;
+import org.academiadecodigo.simplegraphics.graphics.Color;
 
 public class PaintManager {
 
@@ -8,30 +10,25 @@ public class PaintManager {
     private Grid grid;
     private ColorPalette colorPalette;
     private MouseManager mouseManager;
+    private Color selectedColor;
 
 
     //Constructor
     public PaintManager(int maxCol, int maxRow, int cellSize) {
         grid = new Grid(maxCol, maxRow, cellSize);
-        colorPalette = new ColorPalette(maxCol, cellSize);
+        colorPalette = new ColorPalette(maxCol * cellSize, 10, cellSize);
         mouseManager = new MouseManager(this);
+        selectedColor = Color.BLACK;
     }
-
 
     //Methods
     public void mouseClick(double x, double y){
-        int col = grid.pixelToCell(x);
-        int row = grid.pixelToCell(y);
-        if (col < grid.getMaxCol() && row < grid.getMaxRow()){
-            paintCell(col,row);
-        }
-
-
+        if (grid.inGrid(x,y,selectedColor)){
+        } else if (colorPalette.inColorPalette(x,y)){
+            selectedColor = colorPalette.changeColor(x,y);
+        } else {selectedColor = Color.WHITE;}
     }
 
 
-    public void paintCell(int col, int row){
-        grid.paintCell(col, row);
-    }
 
 }

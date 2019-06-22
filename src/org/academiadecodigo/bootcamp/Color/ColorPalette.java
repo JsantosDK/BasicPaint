@@ -1,46 +1,51 @@
 package org.academiadecodigo.bootcamp.Color;
 
-import org.academiadecodigo.bootcamp.Grid;
+import org.academiadecodigo.bootcamp.Cells.Cell;
 import org.academiadecodigo.simplegraphics.graphics.Color;
-import org.academiadecodigo.simplegraphics.graphics.Ellipse;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class ColorPalette {
 
     //Properties
-    private int col;
-    private int row;
+    private int minCol;
+    private int minRow;
+    private int maxCol;
+    private int maxRow;
     private int cellSize;
+    private Cell[][] palette;
+
 
     //Constructor
-
-    public ColorPalette(int maxCol, int cellSize) {
-        this.cellSize = 25;
-        col = maxCol * cellSize + this.cellSize * 2;
-        row = Grid.Padding;
+    public ColorPalette(int colPadding, int rowPadding, int cellSize) {
+        this.cellSize = cellSize;
+        minCol = colPadding + cellSize * 2;
+        minRow = rowPadding;
+        maxCol = minCol;
+        minRow = maxRow;
         drawPalette();
     }
 
 
     //Methods
-    private void drawPalette(){
-        for (int i = 0; i < ColorList.values().length; i++){
-            Ellipse paletteColor = new Ellipse(col, row, cellSize, cellSize);
-            paletteColor.setColor(colorSelector(ColorList.values()[i]));
-            paletteColor.fill();
-            if (i == ColorList.values().length/2 - 1){
-                row = Grid.Padding;
-                col += cellSize;
-            } else {
-                row += cellSize;
+    private void drawPalette() {
+        palette = new Cell[2][6];
+        int colorIndex = 0;
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 6; j++) {
+                palette[i][j] = new Cell(i, j, cellSize, minCol, minRow);
+                palette[i][j].paintCell(colorSelector(ColorList.values()[colorIndex]));
+                colorIndex++;
+                maxRow += cellSize;
             }
+            maxCol += cellSize;
         }
-        Rectangle contour = new Rectangle(col - cellSize, Grid.Padding, cellSize * 2, cellSize * 6);
+        maxRow = maxRow / 2;
+        Rectangle contour = new Rectangle(minCol, minRow, maxCol - minCol, maxRow - minRow);
         contour.draw();
     }
 
-    private Color colorSelector(ColorList colorList){
-        switch (colorList){
+    private Color colorSelector(ColorList colorList) {
+        switch (colorList) {
             case RED:
                 return Color.RED;
             case GREEN:
@@ -65,11 +70,20 @@ public class ColorPalette {
                 return Color.PINK;
             case ORANGE:
                 return Color.ORANGE;
-                default:
-                    return Color.WHITE;
+            default:
+                return Color.WHITE;
         }
     }
 
+    public boolean inColorPalette(double x, double y) {
+        return (x > minCol && x <= maxCol && y > minRow && y <= maxRow);
+    }
+
+    public Color changeColor(double x, double y) {
+        int col = (int) (x - minCol) / cellSize;
+        int row = (int) (y - minRow) / cellSize;
+        return palette[col][row].getColor();
+    }
 
 
 }

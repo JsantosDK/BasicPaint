@@ -1,12 +1,13 @@
 package org.academiadecodigo.bootcamp;
 
 import org.academiadecodigo.bootcamp.Cells.Cell;
+import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class Grid {
 
     //Properties
-    public static final int Padding = 10;
+    private final int padding = 10;
     private int maxCol;
     private int maxRow;
     private int cellSize;
@@ -24,42 +25,39 @@ public class Grid {
 
     //Methods
     private void drawCellGrid(){
-        cells = new Cell[this.maxCol][this.maxRow];
+        cells = new Cell[maxCol][maxRow];
         for (int i = 0; i < maxCol; i++){
             for (int j = 0; j < maxRow; j++){
-                cells[i][j] = new Cell(i,j,cellSize);
+                cells[i][j] = new Cell(i,j,cellSize, padding, padding);
             }
         }
     }
 
     private void drawLayout(){
-        Rectangle limits = new Rectangle(Padding,Padding, maxCol * cellSize, maxRow * cellSize);
+        Rectangle limits = new Rectangle(padding, padding, maxCol * cellSize, maxRow * cellSize);
         limits.draw();
     }
 
-
-    public void paintCell(int col, int row){
-        cells[col][row].paintCell();
+    public boolean inGrid(double x, double y, Color selectedColor){
+        int col = (int) ((x - padding )/ cellSize);
+        int row = (int) ((y - padding )/ cellSize);
+        if (col >= 0 && col < maxCol && row >= 0 && row < maxRow){
+            paintCell(col, row, selectedColor);
+            return true;
+        } return false;
     }
 
-    public int pixelToCell(double x){
-        System.out.println(x);
-        System.out.println((x - Padding)/ cellSize);
+    private void paintCell(int col, int row, Color color){
+        cells[col][row].paintCell(color);
+    }
 
-        return (int) ((x - Padding )/ cellSize);
+    public void clearCell() {
+        for (int i = 0; i < maxCol; i++) {
+            for (int j = 0; j < maxRow; j++) {
+                cells[i][j].clearPaint();
+            }
+        }
     }
 
 
-    //Getters and Setters
-    public int getMaxCol() {
-        return maxCol;
-    }
-
-    public int getMaxRow() {
-        return maxRow;
-    }
-
-    public int getCellSize() {
-        return cellSize;
-    }
 }
