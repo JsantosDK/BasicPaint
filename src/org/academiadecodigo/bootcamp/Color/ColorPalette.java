@@ -13,11 +13,12 @@ public class ColorPalette {
     private int maxRow;
     private int cellSize;
     private Cell[][] palette;
-
+    private ColorConverter colorConverter;
 
     //Constructor
-    public ColorPalette(int colPadding, int rowPadding, int cellSize) {
+    public ColorPalette(int colPadding, int rowPadding, int cellSize, ColorConverter colorConverter) {
         this.cellSize = cellSize;
+        this.colorConverter = colorConverter;
         minCol = colPadding + cellSize * 2;
         minRow = rowPadding;
         maxCol = minCol;
@@ -25,15 +26,14 @@ public class ColorPalette {
         drawPalette();
     }
 
-
     //Methods
     private void drawPalette() {
         palette = new Cell[2][6];
-        int colorIndex = 0;
+        int colorIndex = 1;
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 6; j++) {
-                palette[i][j] = new Cell(i, j, cellSize, minCol, minRow);
-                palette[i][j].paintCell(colorSelector(ColorList.values()[colorIndex]));
+                palette[i][j] = new Cell(i, j, cellSize, minCol, minRow, colorConverter);
+                palette[i][j].paintCell(colorConverter.colorSelector(colorIndex));
                 colorIndex++;
                 maxRow += cellSize;
             }
@@ -42,37 +42,6 @@ public class ColorPalette {
         maxRow = maxRow / 2;
         Rectangle contour = new Rectangle(minCol, minRow, maxCol - minCol, maxRow - minRow);
         contour.draw();
-    }
-
-    private Color colorSelector(ColorList colorList) {
-        switch (colorList) {
-            case RED:
-                return Color.RED;
-            case GREEN:
-                return Color.GREEN;
-            case BLUE:
-                return Color.BLUE;
-            case LIGHT_GRAY:
-                return Color.LIGHT_GRAY;
-            case GRAY:
-                return Color.GRAY;
-            case DARK_GRAY:
-                return Color.DARK_GRAY;
-            case BLACK:
-                return Color.BLACK;
-            case CYAN:
-                return Color.CYAN;
-            case MAGENTA:
-                return Color.MAGENTA;
-            case YELLOW:
-                return Color.YELLOW;
-            case PINK:
-                return Color.PINK;
-            case ORANGE:
-                return Color.ORANGE;
-            default:
-                return Color.WHITE;
-        }
     }
 
     public boolean inColorPalette(double x, double y) {
@@ -84,6 +53,5 @@ public class ColorPalette {
         int row = (int) (y - minRow) / cellSize;
         return palette[col][row].getColor();
     }
-
 
 }

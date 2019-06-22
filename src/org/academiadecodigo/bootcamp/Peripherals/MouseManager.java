@@ -18,11 +18,14 @@ public class MouseManager implements MouseHandler {
         this.mouse.addEventListener(MouseEventType.MOUSE_CLICKED);
     }
 
+    public void mouseDragged(){
+    }
+
+
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
         //Necessary compensations since the Library is not properly aligned.
         paintManager.mouseClick(mouseEvent.getX(), mouseEvent.getY()-25);
-
     }
 
     @Override

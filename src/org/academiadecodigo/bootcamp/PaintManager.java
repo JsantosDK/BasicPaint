@@ -1,5 +1,6 @@
 package org.academiadecodigo.bootcamp;
 
+import org.academiadecodigo.bootcamp.Color.ColorConverter;
 import org.academiadecodigo.bootcamp.Color.ColorPalette;
 import org.academiadecodigo.bootcamp.Peripherals.KeyboardManager;
 import org.academiadecodigo.bootcamp.Peripherals.MouseManager;
@@ -10,15 +11,18 @@ public class PaintManager {
     //Properties
     private Grid grid;
     private ColorPalette colorPalette;
+    private ColorConverter colorConverter;
     private MouseManager mouseManager;
     private KeyboardManager keyboardManager;
+    private StreamManager streamManager;
     private Color selectedColor;
 
 
     //Constructor
     public PaintManager(int maxCol, int maxRow, int cellSize) {
-        grid = new Grid(maxCol, maxRow, cellSize);
-        colorPalette = new ColorPalette(maxCol * cellSize, 10, cellSize);
+        colorConverter = new ColorConverter();
+        grid = new Grid(maxCol, maxRow, cellSize, colorConverter);
+        colorPalette = new ColorPalette(maxCol * cellSize, 10, cellSize, colorConverter);
         mouseManager = new MouseManager(this);
         keyboardManager = new KeyboardManager(this);
         selectedColor = Color.BLACK;
@@ -34,6 +38,10 @@ public class PaintManager {
 
     public void clearGrid(){
         grid.clearCells();
+    }
+
+    public void save(){
+        System.out.println(grid.toString());
     }
 
 }

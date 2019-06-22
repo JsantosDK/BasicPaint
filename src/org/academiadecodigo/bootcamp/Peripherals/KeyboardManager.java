@@ -25,6 +25,10 @@ public class KeyboardManager implements KeyboardHandler {
         clearAll.setKey(KeyboardEvent.KEY_C);
         clearAll.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         this.keyboard.addEventListener(clearAll);
+        KeyboardEvent save = new KeyboardEvent();
+        save.setKey(KeyboardEvent.KEY_O);
+        save.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        this.keyboard.addEventListener(save);
     }
 
 
@@ -32,6 +36,9 @@ public class KeyboardManager implements KeyboardHandler {
     public void keyPressed(KeyboardEvent keyboardEvent) {
         if (keyboardEvent.getKey() == KeyboardEvent.KEY_C){
             paintManager.clearGrid();
+        }
+        if (keyboardEvent.getKey() == KeyboardEvent.KEY_O){
+            paintManager.save();
         }
     }
 

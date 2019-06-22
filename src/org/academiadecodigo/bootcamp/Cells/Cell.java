@@ -1,5 +1,6 @@
 package org.academiadecodigo.bootcamp.Cells;
 
+import org.academiadecodigo.bootcamp.Color.ColorConverter;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
@@ -12,16 +13,18 @@ public class Cell {
     private int cellSize;
     private int colPadding;
     private int rowPadding;
+    private ColorConverter colorConverter;
     private Color color;
     private Rectangle cell;
 
     //Constructor
-    public Cell(int col, int row, int cellSize, int colPadding, int rowPadding) {
+    public Cell(int col, int row, int cellSize, int colPadding, int rowPadding, ColorConverter colorConverter) {
         this.col = col;
         this.row = row;
+        this.cellSize = cellSize;
         this.colPadding = colPadding;
         this.rowPadding = rowPadding;
-        this.cellSize = cellSize;
+        this.colorConverter = colorConverter;
         color = Color.BLACK;
         draw();
     }
@@ -50,5 +53,17 @@ public class Cell {
         cell.draw();
     }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder(4);
+        if (cell.isFilled()){
+            stringBuilder.append(1);
+        } else {
+            stringBuilder.append(0);
+        }
+        stringBuilder.append(colorConverter.colorIndex(cell.getColor()));
+        stringBuilder.append(" ");
+        return stringBuilder.toString();
+    }
 
 }
