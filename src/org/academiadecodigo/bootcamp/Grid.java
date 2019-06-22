@@ -51,7 +51,7 @@ public class Grid {
         cells[col][row].paintCell(color);
     }
 
-    public void clearCell() {
+    public void clearCells() {
         for (int i = 0; i < maxCol; i++) {
             for (int j = 0; j < maxRow; j++) {
                 cells[i][j].clearPaint();

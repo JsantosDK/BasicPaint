@@ -1,6 +1,7 @@
 package org.academiadecodigo.bootcamp;
 
 import org.academiadecodigo.bootcamp.Color.ColorPalette;
+import org.academiadecodigo.bootcamp.Peripherals.KeyboardManager;
 import org.academiadecodigo.bootcamp.Peripherals.MouseManager;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 
@@ -10,6 +11,7 @@ public class PaintManager {
     private Grid grid;
     private ColorPalette colorPalette;
     private MouseManager mouseManager;
+    private KeyboardManager keyboardManager;
     private Color selectedColor;
 
 
@@ -18,6 +20,7 @@ public class PaintManager {
         grid = new Grid(maxCol, maxRow, cellSize);
         colorPalette = new ColorPalette(maxCol * cellSize, 10, cellSize);
         mouseManager = new MouseManager(this);
+        keyboardManager = new KeyboardManager(this);
         selectedColor = Color.BLACK;
     }
 
@@ -29,6 +32,8 @@ public class PaintManager {
         } else {selectedColor = Color.WHITE;}
     }
 
-
+    public void clearGrid(){
+        grid.clearCells();
+    }
 
 }
