@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d821bbd7-d74a-426a-887b-2c3103666e6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Color/ColorConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/StreamManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/Cells/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/Cells/Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/Color/ColorList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/Color/ColorPalette$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/Color/ColorPalette.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/Color/ColorPalette.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/Grid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/PaintManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/PaintManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/Peripherals/KeyboardManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/Peripherals/KeyboardManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/Peripherals/MouseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/basicpaint/org/academiadecodigo/bootcamp/Peripherals/MouseManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Cells/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Cells/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Color/ColorList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Color/ColorPalette.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Color/ColorPalette.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/PaintManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/PaintManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Peripherals/KeyboardManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Peripherals/KeyboardManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Peripherals/MouseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Peripherals/MouseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/StreamManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/StreamManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,17 +17,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/PaintManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+            <state relative-caret-position="492">
+              <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1000#1001#0" expanded="true" />
                 <element signature="e#1022#1023#0" expanded="true" />
-                <element signature="e#1385#1386#0" expanded="true" />
-                <element signature="e#1436#1437#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,8 +43,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/StreamManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+            <state relative-caret-position="375">
+              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -151,10 +145,11 @@
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Peripherals/KeyboardManager.java" />
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Color/ColorConvertor.java" />
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/ColorConverter.java" />
-        <option value="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/PaintManager.java" />
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Cells/Cell.java" />
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Color/ColorPalette.java" />
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Grid.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/StreamManager.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/PaintManager.java" />
       </list>
     </option>
   </component>
@@ -281,12 +276,12 @@
       <updated>1561023042337</updated>
       <workItem from="1561023043618" duration="852000" />
       <workItem from="1561050152329" duration="3909000" />
-      <workItem from="1561201550670" duration="11839000" />
+      <workItem from="1561201550670" duration="12081000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16600000" />
+    <option name="totallyTimeSpent" value="16842000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="23" width="1920" height="978" extended-state="0" />
@@ -391,13 +386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/simplegraphics.jar!/org/academiadecodigo/simplegraphics/mouse/Mouse.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-439">
@@ -495,23 +483,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/StreamManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        <state relative-caret-position="375">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/bootcamp/PaintManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        <state relative-caret-position="492">
+          <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1000#1001#0" expanded="true" />
             <element signature="e#1022#1023#0" expanded="true" />
-            <element signature="e#1385#1386#0" expanded="true" />
-            <element signature="e#1436#1437#0" expanded="true" />
           </folding>
         </state>
       </provider>

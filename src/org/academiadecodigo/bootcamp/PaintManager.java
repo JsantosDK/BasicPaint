@@ -25,6 +25,7 @@ public class PaintManager {
         colorPalette = new ColorPalette(maxCol * cellSize, 10, cellSize, colorConverter);
         mouseManager = new MouseManager(this);
         keyboardManager = new KeyboardManager(this);
+        streamManager = new StreamManager("/Users/codecadet/workrepo/week06/basicpaint/src/org/academiadecodigo/bootcamp/save.txt");
         selectedColor = Color.BLACK;
     }
 
@@ -42,6 +43,7 @@ public class PaintManager {
 
     public void save(){
         System.out.println(grid.toString());
+        streamManager.saveScreen(grid.toString());
     }
 
 }
