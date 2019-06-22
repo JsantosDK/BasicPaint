@@ -29,6 +29,10 @@ public class KeyboardManager implements KeyboardHandler {
         save.setKey(KeyboardEvent.KEY_O);
         save.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         this.keyboard.addEventListener(save);
+        KeyboardEvent load = new KeyboardEvent();
+        load.setKey(KeyboardEvent.KEY_P);
+        load.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        this.keyboard.addEventListener(load);
     }
 
 
@@ -39,6 +43,9 @@ public class KeyboardManager implements KeyboardHandler {
         }
         if (keyboardEvent.getKey() == KeyboardEvent.KEY_O){
             paintManager.save();
+        }
+        if (keyboardEvent.getKey() == KeyboardEvent.KEY_P){
+            paintManager.load();
         }
     }
 

@@ -53,17 +53,24 @@ public class Cell {
         cell.draw();
     }
 
-    @Override
-    public String toString() {
-        StringBuilder stringBuilder = new StringBuilder(4);
-        if (cell.isFilled()){
-            stringBuilder.append(1);
-        } else {
-            stringBuilder.append(0);
+    public void loadCell(String information){
+        cell.setColor(colorConverter.colorSelector(Integer.parseInt(information.substring(1))));
+        if (Integer.parseInt(information.substring(0,1)) == 1){
+            cell.fill();
+        }  else {
+            cell.draw();
         }
-        stringBuilder.append(colorConverter.colorIndex(cell.getColor()));
-        stringBuilder.append(" ");
-        return stringBuilder.toString();
     }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder(3);
+        if (cell.isFilled()){
+            stringBuilder.append("1");
+        } else {
+            stringBuilder.append("0");
+        }
+        stringBuilder.append(colorConverter.colorIndex(cell.getColor()));
+        return stringBuilder.toString();
+    }
 }

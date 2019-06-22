@@ -68,11 +68,18 @@ public class Grid {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < maxCol; i++) {
             for (int j = 0; j < maxRow; j++) {
-                stringBuilder.append(cells[i][j].toString());
+                stringBuilder.append(cells[j][i].toString());
+                stringBuilder.append(" ");
             }
             stringBuilder.append("\n");
         }
         return stringBuilder.toString();
-
     }
+
+    public void setupCell(int col, int row, String cellInformation){
+        cells[col][row].loadCell(cellInformation);
+    }
+
+
+
 }
