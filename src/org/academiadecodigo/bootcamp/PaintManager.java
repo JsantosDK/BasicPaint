@@ -16,10 +16,14 @@ public class PaintManager {
     private KeyboardManager keyboardManager;
     private StreamManager streamManager;
     private Color selectedColor;
+    private double maxLength;
+    private double maxHeigth;
 
 
     //Constructor
     public PaintManager(int maxCol, int maxRow, int cellSize) {
+        maxLength = cellSize * maxCol;
+        maxHeigth = cellSize * maxRow;
         colorConverter = new ColorConverter();
         grid = new Grid(maxCol, maxRow, cellSize, colorConverter);
         colorPalette = new ColorPalette(maxCol * cellSize, 10, cellSize, colorConverter);
@@ -31,7 +35,9 @@ public class PaintManager {
 
     //Methods
     public void mouseClick(double x, double y){
-        if (grid.inGrid(x,y,selectedColor)){
+
+        if ( x - 10 >= 0 && x - 10 < maxLength && y - 10 >= 0 && y - 10 < maxHeigth){
+            grid.inGrid(x,y,selectedColor);
         } else if (colorPalette.inColorPalette(x,y)){
             selectedColor = colorPalette.changeColor(x,y);
         } else {selectedColor = Color.WHITE;}

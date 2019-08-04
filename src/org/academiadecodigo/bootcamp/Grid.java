@@ -41,14 +41,10 @@ public class Grid {
         limits.draw();
     }
 
-    public boolean inGrid(double x, double y, Color selectedColor) {
+    public void inGrid(double x, double y, Color selectedColor) {
         int col = (int) ((x - padding) / cellSize);
         int row = (int) ((y - padding) / cellSize);
-        if (col >= 0 && col < maxCol && row >= 0 && row < maxRow) {
-            paintCell(col, row, selectedColor);
-            return true;
-        }
-        return false;
+        paintCell(col, row, selectedColor);
     }
 
     private void paintCell(int col, int row, Color color) {
